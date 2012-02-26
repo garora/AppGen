@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="UserGroup" table="user_groups" lazy="true" >
+    <id name="Ugid">
+      <generator class="identity" />
+      <column name="ugid" sql-type="int" not-null="true" />
+    </id>
+    <property name="Name">
+      <column name="name" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="Description">
+      <column name="description" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="OwnerId">
+      <column name="owner_id" sql-type="int" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="QuizType" table="quiz_type" lazy="true" >
+    <id name="Qtid">
+      <generator class="identity" />
+      <column name="qtid" sql-type="int" not-null="true" />
+    </id>
+    <property name="Description">
+      <column name="description" sql-type="varchar" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

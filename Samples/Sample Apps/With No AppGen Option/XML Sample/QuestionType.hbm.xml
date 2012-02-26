@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="QuestionType" table="question_type" lazy="true" >
+    <id name="Qstid">
+      <generator class="identity" />
+      <column name="qstid" sql-type="int" not-null="true" />
+    </id>
+    <property name="Description">
+      <column name="description" sql-type="varchar" not-null="true" />
+    </property>
+    <bag name="Questions" inverse="true" cascade="none">
+      <key column="qstid" />
+      <one-to-many class="Question" />
+    </bag>
+  </class>
+</hibernate-mapping>

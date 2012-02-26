@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="QuizPermission" table="quiz_permissions" lazy="true" >
+    <composite-id>
+      <key-property name="Qid" column="qid" />
+      <key-property name="Uid" column="uid" />
+      <key-property name="Permission" column="permission" />
+    </composite-id>
+    <id name="Qid">
+      <generator class="identity" />
+      <column name="qid" sql-type="int" not-null="true" />
+    </id>
+    <id name="Uid">
+      <generator class="identity" />
+      <column name="uid" sql-type="int" not-null="true" />
+    </id>
+    <id name="Permission">
+      <generator class="identity" />
+      <column name="permission" sql-type="varchar" not-null="true" />
+    </id>
+    <property name="CreateP">
+      <column name="create_p" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="ReadP">
+      <column name="read_p" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="UpdateP">
+      <column name="update_p" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="DeleteP">
+      <column name="delete_p" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="ImportP">
+      <column name="import_p" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="ExportP">
+      <column name="export_p" sql-type="tinyint" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

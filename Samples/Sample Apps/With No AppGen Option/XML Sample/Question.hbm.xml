@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Question" table="questions" lazy="true" >
+    <composite-id>
+      <key-property name="Qsid" column="qsid" />
+      <key-property name="Qstid" column="qstid" />
+    </composite-id>
+    <id name="Qsid">
+      <generator class="identity" />
+      <column name="qsid" sql-type="int" not-null="true" />
+    </id>
+    <property name="Qtitle">
+      <column name="qtitle" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="Qdescription">
+      <column name="qdescription" sql-type="varchar" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="Qstid">
+      <column name="qstid" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="Qstid">
+      <column name="qstid" sql-type="int" not-null="true" />
+    </property>
+    <id name="Qstid">
+      <generator class="identity" />
+      <column name="qstid" sql-type="int" not-null="true" />
+    </id>
+  </class>
+</hibernate-mapping>

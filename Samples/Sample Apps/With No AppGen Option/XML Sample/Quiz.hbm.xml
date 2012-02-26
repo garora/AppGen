@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Quiz" table="quiz" lazy="true" >
+    <id name="Qzid">
+      <generator class="identity" />
+      <column name="qzid" sql-type="int" not-null="true" />
+    </id>
+    <property name="Qzdescription">
+      <column name="qzdescription" sql-type="varchar" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="QzOwnerId">
+      <column name="qzOwner_Id" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="QzOwnerId">
+      <column name="qzOwner_Id" sql-type="int" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="QzCreaterId">
+      <column name="qzCreater_Id" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="QzCreaterId">
+      <column name="qzCreater_Id" sql-type="int" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="QzTemplateId">
+      <column name="qz_template_id" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="QzTemplateId">
+      <column name="qz_template_id" sql-type="int" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

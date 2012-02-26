@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Answer" table="answers" lazy="true" >
+    <composite-id>
+      <key-property name="Aid" column="aid" />
+      <key-property name="Qsid" column="qsid" />
+    </composite-id>
+    <id name="Aid">
+      <generator class="identity" />
+      <column name="aid" sql-type="int" not-null="true" />
+    </id>
+    <id name="Qsid">
+      <generator class="identity" />
+      <column name="qsid" sql-type="int" not-null="true" />
+    </id>
+    <property name="Answer">
+      <column name="answer" sql-type="int" not-null="true" />
+    </property>
+    <property name="Adescription">
+      <column name="adescription" sql-type="varchar" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

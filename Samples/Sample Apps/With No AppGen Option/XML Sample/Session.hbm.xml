@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Session" table="sessions" lazy="true" >
+    <id name="SessKey">
+      <generator class="identity" />
+      <column name="sess_key" sql-type="varchar" not-null="true" />
+    </id>
+    <property name="Expiry">
+      <column name="expiry" sql-type="datetime" not-null="true" />
+    </property>
+    <property name="Created">
+      <column name="created" sql-type="datetime" not-null="true" />
+    </property>
+    <property name="Modified">
+      <column name="modified" sql-type="datetime" not-null="true" />
+    </property>
+    <property name="Sessdata">
+      <column name="sessdata" sql-type="varchar" not-null="false" />
+    </property>
+  </class>
+</hibernate-mapping>

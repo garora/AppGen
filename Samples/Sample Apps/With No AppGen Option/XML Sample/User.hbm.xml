@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="User" table="users" lazy="true" >
+    <id name="Uid">
+      <generator class="identity" />
+      <column name="uid" sql-type="int" not-null="true" />
+    </id>
+    <property name="UsersName">
+      <column name="users_name" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="Password">
+      <column name="password" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="FullName">
+      <column name="full_name" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="ParentId">
+      <column name="parent_id" sql-type="int" not-null="true" />
+    </property>
+    <property name="Email">
+      <column name="email" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="CreateQuiz">
+      <column name="create_quiz" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="CreateUser">
+      <column name="create_user" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="DeleteUser">
+      <column name="delete_user" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="Superadmin">
+      <column name="superadmin" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="Configurator">
+      <column name="configurator" sql-type="tinyint" not-null="true" />
+    </property>
+    <property name="OneTimePw">
+      <column name="one_time_pw" sql-type="text" not-null="false" />
+    </property>
+    <bag name="Quizzes" inverse="true" cascade="none">
+      <key column="qzCreater_Id" />
+      <one-to-many class="Quiz" />
+    </bag>
+    <bag name="Quizzes" inverse="true" cascade="none">
+      <key column="qzOwner_Id" />
+      <one-to-many class="Quiz" />
+    </bag>
+    <bag name="QuizTemplates" inverse="true" cascade="none">
+      <key column="qzt_Creater_Id" />
+      <one-to-many class="QuizTemplate" />
+    </bag>
+    <bag name="QuizTemplates" inverse="true" cascade="none">
+      <key column="qzt_Owner_Id" />
+      <one-to-many class="QuizTemplate" />
+    </bag>
+    <bag name="UserInGroups" inverse="true" cascade="none">
+      <key column="uid" />
+      <one-to-many class="UserInGroup" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FailedLoginAttempt" table="failed_login_attempts" lazy="true" >
+    <id name="Id">
+      <generator class="identity" />
+      <column name="id" sql-type="int" not-null="true" />
+    </id>
+    <property name="Ip">
+      <column name="ip" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="LastAttempt">
+      <column name="last_attempt" sql-type="varchar" not-null="true" />
+    </property>
+    <property name="NumberAttempts">
+      <column name="number_attempts" sql-type="int" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

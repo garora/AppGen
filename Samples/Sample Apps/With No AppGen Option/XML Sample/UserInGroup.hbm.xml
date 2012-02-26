@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="UserInGroup" table="user_in_groups" lazy="true" >
+    <property name="Ugid">
+      <column name="ugid" sql-type="int" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="Uid">
+      <column name="uid" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="Uid">
+      <column name="uid" sql-type="int" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

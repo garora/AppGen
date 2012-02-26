@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="MySampleApplication" namespace="MySampleApplication" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="QuizTemplate" table="quiz_template" lazy="true" >
+    <id name="Qztid">
+      <generator class="identity" />
+      <column name="qztid" sql-type="int" not-null="true" />
+    </id>
+    <property name="QztDescription">
+      <column name="qzt_description" sql-type="varchar" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="QztOwnerId">
+      <column name="qzt_Owner_Id" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="QztOwnerId">
+      <column name="qzt_Owner_Id" sql-type="int" not-null="true" />
+    </property>
+    <many-to-one insert="false" update="false" lazy="false" name="QztCreaterId">
+      <column name="qzt_Creater_Id" sql-type="int" not-null="true" />
+    </many-to-one>
+    <property name="QztCreaterId">
+      <column name="qzt_Creater_Id" sql-type="int" not-null="true" />
+    </property>
+    <property name="IsFixed">
+      <column name="isFixed" sql-type="bit" not-null="true" />
+    </property>
+    <property name="MaxQuestions">
+      <column name="max_questions" sql-type="int" not-null="true" />
+    </property>
+    <property name="MaxMandatoryQuestions">
+      <column name="max_mandatory_questions" sql-type="int" not-null="true" />
+    </property>
+    <bag name="Quizzes" inverse="true" cascade="none">
+      <key column="qz_template_id" />
+      <one-to-many class="Quiz" />
+    </bag>
+  </class>
+</hibernate-mapping>
