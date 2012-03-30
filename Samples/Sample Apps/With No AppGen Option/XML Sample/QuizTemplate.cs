@@ -7,7 +7,7 @@ namespace MySampleApplication {
     
     public class QuizTemplate {
         public QuizTemplate() {
-			Quizzes = new <Quiz>();
+			Quizzes = new List<Quiz>();
         }
         public virtual int Qztid {
             get;
@@ -21,7 +21,7 @@ namespace MySampleApplication {
             get;
             set;
         }
-        public virtual <Quiz> Quizzes {
+        public virtual IList<Quiz> Quizzes {
             get;
             set;
         }

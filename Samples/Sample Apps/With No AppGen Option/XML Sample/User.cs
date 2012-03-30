@@ -7,33 +7,33 @@ namespace MySampleApplication {
     
     public class User {
         public User() {
-			Quizzes = new <Quiz>();
-			Quizzes = new <Quiz>();
-			QuizTemplates = new <QuizTemplate>();
-			QuizTemplates = new <QuizTemplate>();
-			UserInGroups = new <UserInGroup>();
+			Quizzes = new List<Quiz>();
+			Quizzes = new List<Quiz>();
+			QuizTemplates = new List<QuizTemplate>();
+			QuizTemplates = new List<QuizTemplate>();
+			UserInGroups = new List<UserInGroup>();
         }
         public virtual int Uid {
             get;
             set;
         }
-        public virtual <Quiz> Quizzes {
+        public virtual IList<Quiz> Quizzes {
             get;
             set;
         }
-        public virtual <Quiz> Quizzes {
+        public virtual IList<Quiz> Quizzes {
             get;
             set;
         }
-        public virtual <QuizTemplate> QuizTemplates {
+        public virtual IList<QuizTemplate> QuizTemplates {
             get;
             set;
         }
-        public virtual <QuizTemplate> QuizTemplates {
+        public virtual IList<QuizTemplate> QuizTemplates {
             get;
             set;
         }
-        public virtual <UserInGroup> UserInGroups {
+        public virtual IList<UserInGroup> UserInGroups {
             get;
             set;
         }

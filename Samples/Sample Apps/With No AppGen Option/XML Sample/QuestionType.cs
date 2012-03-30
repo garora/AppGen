@@ -7,13 +7,13 @@ namespace MySampleApplication {
     
     public class QuestionType {
         public QuestionType() {
-			Questions = new <Question>();
+			Questions = new List<Question>();
         }
         public virtual int Qstid {
             get;
             set;
         }
-        public virtual <Question> Questions {
+        public virtual IList<Question> Questions {
             get;
             set;
         }
