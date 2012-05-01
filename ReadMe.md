@@ -27,6 +27,10 @@
   
 We are in the process of testing phase and preparing documentations for the stable release.
 
+#Issue:
+-Fixed issue : Breaking hierarchy collection data while generating mapping. Fixed to use IList<T>
+
+
 Thanks for your patience
 Gaurav Arora
 	
